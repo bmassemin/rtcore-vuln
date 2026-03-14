@@ -1,0 +1,13 @@
+OpenSCManager
+CreateService
+StartService
+CloseServiceHandle
+
+OpenService
+ControlService
+QueryServiceStatus
+DeleteService
+
+SC_MANAGER_ALL_ACCESS
+SERVICE_ALL_ACCESS
+SERVICE_CONTROL_STOP
