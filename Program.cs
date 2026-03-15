@@ -8,12 +8,13 @@ var logger = CreateLogger();
 var driverService = new DriverService(logger);
 
 var driverPath = Path.GetFullPath("RTCore64.sys");
-var handle = driverService.InstallDriver(driverPath, DriverName);
+driverService.InstallDriver(driverPath, DriverName);
+
+var rtCore = new RTCore(driverService, DriverName);
 
 Console.WriteLine("\nPress any key to uninstall the driver...\n");
 Console.ReadKey();
 
-handle.Close();
 driverService.UninstallDriver(DriverName);
 
 static ILogger CreateLogger()
